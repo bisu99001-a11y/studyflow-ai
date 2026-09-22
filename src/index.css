@@ -9,3 +9,26 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
 ::selection { background: #8b5cf6; color: white; }
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-thumb { background: #29304b; border-radius: 10px; }
+
+/* The app uses a dark-first component palette. These scoped overrides keep
+   cards, controls, borders, and secondary text readable in persisted light mode. */
+body:has([class*="bg-[#f4f6fb]"]) { color: #172033; background: #f4f6fb; }
+body:has([class*="bg-[#f4f6fb]"]) header,
+body:has([class*="bg-[#f4f6fb]"]) aside,
+body:has([class*="bg-[#f4f6fb]"]) section { border-color: #e2e8f0; }
+body:has([class*="bg-[#f4f6fb]"]) section { background-color: rgba(255, 255, 255, .92); }
+body:has([class*="bg-[#f4f6fb]"]) .bg-slate-900 { background-color: #f8fafc; }
+body:has([class*="bg-[#f4f6fb]"]) .bg-slate-800 { background-color: #e2e8f0; }
+body:has([class*="bg-[#f4f6fb]"]) .text-slate-100,
+body:has([class*="bg-[#f4f6fb]"]) .text-slate-200,
+body:has([class*="bg-[#f4f6fb]"]) .text-slate-300 { color: #172033; }
+body:has([class*="bg-[#f4f6fb]"]) .text-slate-400,
+body:has([class*="bg-[#f4f6fb]"]) .text-slate-500,
+body:has([class*="bg-[#f4f6fb]"]) .text-slate-600 { color: #64748b; }
+body:has([class*="bg-[#f4f6fb]"]) input,
+body:has([class*="bg-[#f4f6fb]"]) textarea,
+body:has([class*="bg-[#f4f6fb]"]) select { color: #172033; border-color: #cbd5e1; }
+@media (max-width: 639px) {
+  body { overflow-x: hidden; }
+  input, textarea, select { max-width: 100%; }
+}
